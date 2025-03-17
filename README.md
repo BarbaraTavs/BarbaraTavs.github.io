@@ -1,7 +1,6 @@
 # Pojeto_Fundamentos
 
 <h3>Funcionalidades da página</h3>
-O objetivo é criar um site básico para um minimercado, permitindo que os clientes visualizem produtos e serviços disponíveis. As metas incluem:
 
 Criar páginas estruturadas com HTML sem o uso de customizações.
 Exibir produtos organizados em categorias.
