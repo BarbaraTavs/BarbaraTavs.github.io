@@ -2,7 +2,7 @@
 
 <h3>Funcionalidades da página</h3>
 
-Criar páginas estruturadas com HTML sem o uso de customizações.
+Página estruturada com HTML sem o uso de customizações.
 Exibir produtos organizados em categorias.
 Mostrar os serviços oferecidos pelo minimercado.
 
