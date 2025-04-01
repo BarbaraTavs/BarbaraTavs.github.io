@@ -4,155 +4,1158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minimercado Bom Mercado</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #FFC107;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar-brand {
+            font-weight: bold;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+        }
+        
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 15px;
+        }
+        
+        .product-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .service-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+        }
+        
+        footer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(76, 175, 80, 0.25);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #3d8b40;
+            border-color: #3d8b40;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Estilo para alto contraste (acessibilidade) */
+        .high-contrast {
+            background-color: black !important;
+            color: yellow !important;
+        }
+        
+        .high-contrast .navbar,
+        .high-contrast .card,
+        .high-contrast .service-item {
+            background-color: black !important;
+            color: yellow !important;
+        }
+        
+        .high-contrast .nav-link,
+        .high-contrast .navbar-brand,
+        .high-contrast h1, 
+        .high-contrast h2, 
+        .high-contrast h3 {
+            color: yellow !important;
+        }
+        
+        /* Aumentar fonte (acessibilidade) */
+        .larger-font {
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Minimercado Bom Mercado</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#alimentos">Alimentos</a></li>
-                <li><a href="#bebidas">Bebidas</a></li>
-                <li><a href="#limpeza">Produtos de Limpeza</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shopping-basket me-2"></i>Minimercado Bom Mercado
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cadastro">Cadastro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#agendamento">Agendamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                </ul>
+                <div class="ms-2 d-flex">
+                    <button id="contrastBtn" class="btn btn-sm btn-outline-light me-2" title="Alternar alto contraste">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+                    <button id="fontSizeBtn" class="btn btn-sm btn-outline-light" title="Aumentar fonte">
+                        <i class="fas fa-text-height"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
     
-    <section>
-        <h2>Alimentos</h2>
-        
-        <article>
-            <h3>Arroz Integral Premium</h3>
-            <img src="/arroz.jpeg" alt="Arroz Integral Premium">
-            <p>Arroz integral de alta qualidade, fonte de fibras e nutrientes essenciais. Embalagem de 1kg selada a vácuo para maior conservação.</p>
-            <p><strong>Valor: R$ 8,90</strong></p>
-        </article>
-        
-        <article>
-            <h3>Feijão Carioca Selecionado</h3>
-            <img src="/feijao.jpeg" alt="Feijão Carioca Selecionado">
-            <p>Feijão carioca selecionado grão a grão, cozimento rápido e sabor incomparável. Pacote com 1kg.</p>
-            <p><strong>Valor: R$ 7,50</strong></p>
-        </article>
+    <!-- Carousel -->
+    <section id="home" class="mb-5">
+        <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/api/placeholder/1200/400" class="d-block w-100" alt="Promoções de alimentos frescos no Minimercado Bom Mercado">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Produtos Frescos Todos os Dias</h2>
+                        <p>Oferecemos alimentos de qualidade com preços que cabem no seu bolso.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/400" class="d-block w-100" alt="Serviços de entrega do Minimercado Bom Mercado">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Serviço de Entrega Rápido</h2>
+                        <p>Faça suas compras sem sair de casa com nossa entrega ágil e segura.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/api/placeholder/1200/400" class="d-block w-100" alt="Serviços de pagamento de contas no Minimercado Bom Mercado">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Pagamento de Contas</h2>
+                        <p>Resolva tudo em um só lugar com nossos serviços diversos.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
     </section>
     
-    <section>
-        <h2>Bebidas</h2>
+    <!-- Produtos -->
+    <section id="produtos" class="container my-5">
+        <h2 class="section-title text-center">Nossos Produtos</h2>
         
-        <article>
-            <h3>Suco Natural de Laranja</h3>
-            <img src="/suco.jpeg" alt="Suco Natural de Laranja">
-            <p>Suco de laranja 100% natural, sem conservantes ou adição de açúcar. Garrafa de 1 litro, produzido diariamente.</p>
-            <p><strong>Valor: R$ 12,90</strong></p>
-        </article>
+        <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="alimentos-tab" data-bs-toggle="tab" data-bs-target="#alimentos" type="button" role="tab" aria-controls="alimentos" aria-selected="true">Alimentos</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="bebidas-tab" data-bs-toggle="tab" data-bs-target="#bebidas" type="button" role="tab" aria-controls="bebidas" aria-selected="false">Bebidas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="limpeza-tab" data-bs-toggle="tab" data-bs-target="#limpeza" type="button" role="tab" aria-controls="limpeza" aria-selected="false">Produtos de Limpeza</button>
+            </li>
+        </ul>
         
-        <article>
-            <h3>Água Mineral com Gás</h3>
-            <img src="/agua.jpeg" alt="Água Mineral com Gás">
-            <p>Água mineral natural com gás, fonte de minerais essenciais para o organismo. Garrafa de 500ml.</p>
-            <p><strong>Valor: R$ 2,50</strong></p>
-        </article>
+        <div class="tab-content" id="myTabContent">
+            <!-- Alimentos -->
+            <div class="tab-pane fade show active" id="alimentos" role="tabpanel" aria-labelledby="alimentos-tab">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/arroz.jpeg" class="card-img-top product-img" alt="Arroz Integral Premium - Pacote de 1kg de arroz integral selado a vácuo">
+                            <div class="card-body">
+                                <h5 class="card-title">Arroz Integral Premium</h5>
+                                <p class="card-text">Arroz integral de alta qualidade, fonte de fibras e nutrientes essenciais. Embalagem de 1kg selada a vácuo para maior conservação.</p>
+                                <p class="fw-bold text-primary">R$ 8,90</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="1" data-name="Arroz Integral Premium" data-price="8.90">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/feijao.jpeg" class="card-img-top product-img" alt="Feijão Carioca Selecionado - Pacote de 1kg de feijão carioca">
+                            <div class="card-body">
+                                <h5 class="card-title">Feijão Carioca Selecionado</h5>
+                                <p class="card-text">Feijão carioca selecionado grão a grão, cozimento rápido e sabor incomparável. Pacote com 1kg.</p>
+                                <p class="fw-bold text-primary">R$ 7,50</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="2" data-name="Feijão Carioca Selecionado" data-price="7.50">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bebidas -->
+            <div class="tab-pane fade" id="bebidas" role="tabpanel" aria-labelledby="bebidas-tab">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/suco.jpeg" class="card-img-top product-img" alt="Suco Natural de Laranja - Garrafa de 1 litro de suco de laranja natural sem conservantes">
+                            <div class="card-body">
+                                <h5 class="card-title">Suco Natural de Laranja</h5>
+                                <p class="card-text">Suco de laranja 100% natural, sem conservantes ou adição de açúcar. Garrafa de 1 litro, produzido diariamente.</p>
+                                <p class="fw-bold text-primary">R$ 12,90</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="4" data-name="Suco Natural de Laranja" data-price="12.90">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/agua.jpeg" class="card-img-top product-img" alt="Água Mineral com Gás - Garrafa de 500ml de água mineral com gás">
+                            <div class="card-body">
+                                <h5 class="card-title">Água Mineral com Gás</h5>
+                                <p class="card-text">Água mineral natural com gás, fonte de minerais essenciais para o organismo. Garrafa de 500ml.</p>
+                                <p class="fw-bold text-primary">R$ 2,50</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="5" data-name="Água Mineral com Gás" data-price="2.50">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Produtos de Limpeza -->
+            <div class="tab-pane fade" id="limpeza" role="tabpanel" aria-labelledby="limpeza-tab">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/detergente.jpeg" class="card-img-top product-img" alt="Detergente Biodegradável - Frasco de 500ml de detergente biodegradável">
+                            <div class="card-body">
+                                <h5 class="card-title">Detergente Biodegradável</h5>
+                                <p class="card-text">Detergente líquido biodegradável, eficiente contra gorduras e suave para as mãos. Frasco de 500ml.</p>
+                                <p class="fw-bold text-primary">R$ 3,75</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="7" data-name="Detergente Biodegradável" data-price="3.75">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <div class="card product-card">
+                            <img src="/desinfetante.jpeg" class="card-img-top product-img" alt="Desinfetante Multiuso - Embalagem de 1 litro de desinfetante multiuso">
+                            <div class="card-body">
+                                <h5 class="card-title">Desinfetante Multiuso</h5>
+                                <p class="card-text">Desinfetante multiuso com ação bactericida, ideal para limpeza geral da casa. Embalagem econômica de 1 litro.</p>
+                                <p class="fw-bold text-primary">R$ 6,90</p>
+                                <button class="btn btn-primary btn-sm addToCart" data-id="8" data-name="Desinfetante Multiuso" data-price="6.90">
+                                    <i class="fas fa-cart-plus me-1"></i> Adicionar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </section>
     
-    <section">
-        <h2>Produtos de Limpeza</h2>
-        
-        <article>
-            <h3>Detergente Biodegradável</h3>
-            <img src="/detergente.jpeg" alt="Detergente Biodegradável">
-            <p>Detergente líquido biodegradável, eficiente contra gorduras e suave para as mãos. Frasco de 500ml.</p>
-            <p><strong>Valor: R$ 3,75</strong></p>
-        </article>
-        
-        <article>
-            <h3>Desinfetante Multiuso</h3>
-            <img src="/desinfetante.jpeg" alt="Desinfetante Multiuso">
-            <p>Desinfetante multiuso com ação bactericida, ideal para limpeza geral da casa. Embalagem econômica de 1 litro.</p>
-            <p><strong>Valor: R$ 6,90</strong></p>
-        </article>
+    <!-- Serviços -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-item text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Entrega em Domicílio</h3>
+                        <p>Entregamos suas compras em casa com rapidez e segurança. Disponível para pedidos acima de R$ 50,00 em um raio de até 3km.</p>
+                        <p class="fw-bold">R$ 5,00</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-item text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Recarga de Celular</h3>
+                        <p>Serviço de recarga para todas as operadoras de telefonia móvel. Atendimento rápido e comprovante na hora.</p>
+                        <p class="fw-bold">Gratuito (valor mínimo: R$ 15,00)</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-item text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Pagamento de Contas</h3>
+                        <p>Pague suas contas de água, luz, telefone e boletos bancários sem sair do bairro. Serviço rápido e seguro.</p>
+                        <p class="fw-bold">R$ 2,50 por conta</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="service-item text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-copy"></i>
+                        </div>
+                        <h3>Cópias e Impressões</h3>
+                        <p>Serviço de cópias simples e impressões em preto e branco. Ideal para documentos, receitas e trabalhos escolares.</p>
+                        <p class="fw-bold">R$ 0,25 por página</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
-    <section>
-        <h2>Nossos Serviços</h2>
+    <!-- Cadastro de Clientes -->
+    <section id="cadastro" class="container my-5">
+        <h2 class="section-title text-center">Cadastro de Cliente</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <form id="cadastroForm" novalidate>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="nome" class="form-label">Nome Completo <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="nome" name="nome" required placeholder="Seu nome completo">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe seu nome completo.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cpf" class="form-label">CPF <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" required placeholder="000.000.000-00">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe um CPF válido.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="dataNascimento" class="form-label">Data de Nascimento <span class="text-danger">*</span></label>
+                                    <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+                                    <div class="invalid-feedback">
+                                        Por favor, informe sua data de nascimento.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Sexo <span class="text-danger">*</span></label>
+                                    <div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="M" required>
+                                            <label class="form-check-label" for="sexoM">Masculino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="F" required>
+                                            <label class="form-check-label" for="sexoF">Feminino</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="sexo" id="sexoO" value="O" required>
+                                            <label class="form-check-label" for="sexoO">Outro</label>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Por favor, selecione uma opção.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="endereco" class="form-label">Endereço <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="endereco" name="endereco" required placeholder="Rua, número, complemento">
+                                <div class="invalid-feedback">
+                                    Por favor, informe seu endereço.
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="bairro" class="form-label">Bairro <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="bairro" name="bairro" required placeholder="Seu bairro">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe seu bairro.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cidade" class="form-label">Cidade <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="cidade" name="cidade" required placeholder="Sua cidade">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe sua cidade.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="cep" class="form-label">CEP <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="cep" name="cep" required placeholder="00000-000">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe seu CEP.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="telefone" class="form-label">Telefone <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe seu telefone.
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">E-mail <span class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="email" name="email" required placeholder="seu@email.com">
+                                    <div class="invalid-feedback">
+                                        Por favor, informe um e-mail válido.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Preferências de Comunicação</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="receberPromocoes" name="receberPromocoes" checked>
+                                    <label class="form-check-label" for="receberPromocoes">
+                                        Desejo receber promoções e novidades por e-mail
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="receberWhatsApp" name="receberWhatsApp">
+                                    <label class="form-check-label" for="receberWhatsApp">
+                                        Desejo receber promoções e novidades por WhatsApp
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="observacoes" class="form-label">Observações</label>
+                                <textarea class="form-control" id="observacoes" name="observacoes" rows="3" placeholder="Informações adicionais ou preferências de produtos"></textarea>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="termos" name="termos" required>
+                                <label class="form-check-label" for="termos">Concordo com os <a href="#" data-bs-toggle="modal" data-bs-target="#termosModal">termos e condições</a> <span class="text-danger">*</span></label>
+                                <div class="invalid-feedback">
+                                    Você precisa concordar com os termos para continuar.
+                                </div>
+                            </div>
+                            
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                                <button type="reset" class="btn btn-outline-secondary ms-2">Limpar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <article>
-            <h3>Entrega em Domicílio</h3>
-            <p>Entregamos suas compras em casa com rapidez e segurança. Disponível para pedidos acima de R$ 50,00 em um raio de até 3km do minimercado.</p>
-            <p><strong>Valor: R$ 5,00</strong></p>
-        </article>
-        
-        <article>
-            <h3>Recarga de Celular</h3>
-            <p>Serviço de recarga para todas as operadoras de telefonia móvel. Atendimento rápido e comprovante na hora.</p>
-            <p><strong>Valor: Gratuito (valor mínimo de recarga: R$ 15,00)</strong></p>
-        </article>
-        
-        <article>
-            <h3>Pagamento de Contas</h3>
-            <p>Pague suas contas de água, luz, telefone e boletos bancários sem sair do bairro. Serviço rápido e seguro.</p>
-            <p><strong>Valor: R$ 2,50 por conta</strong></p>
-        </article>
-        
-        <article>
-            <h3>Cópias e Impressões</h3>
-            <p>Serviço de cópias simples e impressões em preto e branco. Ideal para documentos, receitas e trabalhos escolares.</p>
-            <p><strong>Valor: R$ 0,25 por página</strong></p>
-        </article>
+        <!-- Termos e Condições -->
+        <div class="modal fade" id="termosModal" tabindex="-1" aria-labelledby="termosModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="termosModalLabel">Termos e Condições</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Ao aceitar estes termos, você concorda que:</p>
+                        <ol>
+                            <li>Os dados fornecidos são verdadeiros e de sua responsabilidade.</li>
+                            <li>Autoriza o Minimercado Bom Mercado a utilizar seus dados para fins de cadastro e comunicação.</li>
+                            <li>Seus dados pessoais serão tratados conforme a Lei Geral de Proteção de Dados (LGPD).</li>
+                            <li>Você pode solicitar a qualquer momento a exclusão de seus dados do sistema.</li>
+                            <li>O Minimercado Bom Mercado poderá enviar comunicações relacionadas aos produtos e serviços conforme suas preferências de comunicação.</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="document.getElementById('termos').checked = true;">Aceitar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
-    <section>
-        <h2>Entre em Contato</h2>
-        <address>
-            <p><strong>Endereço:</strong> Rua das Flores, 123 - Bairro Jardim Primavera</p>
-            <p><strong>Telefone:</strong> (21) 3000-0000</p>
-            <p><strong>WhatsApp:</strong> (21) 90000-0000</p>
-            <p><strong>E-mail:</strong> contato@minimercadobompreco.test</p>
-            <p><strong>Horário de Funcionamento:</strong> Segunda a Sábado, das 7h às 21h. Domingos e feriados, das 8h às 20h.</p>
-        </address>
-        
-        <h3>Formulário de Contato</h3>
-        <form action="#" method="post">
-            <p>
-                <label for="nome">Nome:</label><br>
-                <input type="text" id="nome" name="nome" required>
-            </p>
-            <p>
-                <label for="email">E-mail:</label><br>
-                <input type="email" id="email" name="email" required>
-            </p>
-            <p>
-                <label for="assunto">Assunto:</label><br>
-                <input type="text" id="assunto" name="assunto" required>
-            </p>
-            <p>
-                <label for="mensagem">Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="5" cols="30" required></textarea>
-            </p>
-            <p>
-                <input type="submit" value="Enviar">
-            </p>
-        </form>
+    <!-- Agendamento -->
+    <section id="agendamento" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Agendamento de Serviços</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <ul class="nav nav-pills mb-4 justify-content-center" id="agendamentoTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="entrega-tab" data-bs-toggle="pill" data-bs-target="#entrega" type="button" role="tab" aria-controls="entrega" aria-selected="true">
+                                        <i class="fas fa-truck me-1"></i> Tele-Entrega
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="retirada-tab" data-bs-toggle="pill" data-bs-target="#retirada" type="button" role="tab" aria-controls="retirada" aria-selected="false">
+                                        <i class="fas fa-store me-1"></i> Retirada na Loja
+                                    </button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="agendamentoTabContent">
+                                <!-- Formulário de Entrega -->
+                                <div class="tab-pane fade show active" id="entrega" role="tabpanel" aria-labelledby="entrega-tab">
+                                    <form id="entregaForm" novalidate>
+                                        <div class="alert alert-info">
+                                            <i class="fas fa-info-circle me-2"></i> Serviço de entrega disponível para pedidos acima de R$ 50,00 em um raio de até 3km.
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="enderecoEntrega" class="form-label">Endereço de Entrega <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="enderecoEntrega" name="enderecoEntrega" required placeholder="Rua, número, complemento">
+                                            <div class="invalid-feedback">
+                                                Por favor, informe o endereço de entrega.
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                            <div class="col-md-4">
+                                                <label for="bairroEntrega" class="form-label">Bairro <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="bairroEntrega" name="bairroEntrega" required placeholder="Seu bairro">
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o bairro.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="cidadeEntrega" class="form-label">Cidade <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="cidadeEntrega" name="cidadeEntrega" required placeholder="Sua cidade">
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe a cidade.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="cepEntrega" class="form-label">CEP <span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="cepEntrega" name="cepEntrega" required placeholder="00000-000">
+                                                <div class="invalid-feedback">
+                                                    Por favor, informe o CEP.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="dataEntrega" class="form-label">Data de Entrega <span class="text-danger">*</span></label>
+                                                <input type="date" class="form-control" id="dataEntrega" name="dataEntrega" required min="">
+                                                <div class="invalid-feedback">
+                                                    Por favor, selecione uma data válida.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="horarioEntrega" class="form-label">Horário de Entrega <span class="text-danger">*</span></label>
+                                                <select class="form-select" id="horarioEntrega" name="horarioEntrega" required>
+                                                    <option value="" selected disabled>Selecione um horário</option>
+                                                    <option value="9h-11h">Entre 9h e 11h</option>
+                                                    <option value="11h-13h">Entre 11h e 13h</option>
+                                                    <option value="13h-15h">Entre 13h e 15h</option>
+                                                    <option value="15h-17h">Entre 15h e 17h</option>
+                                                    <option value="17h-19h">Entre 17h e 19h</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor, selecione um horário.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="instrucaoEntrega" class="form-label">Instruções para Entrega</label>
+                                            <textarea class="form-control" id="instrucaoEntrega" name="instrucaoEntrega" rows="2" placeholder="Ex: Apartamento 101, Portaria com interfone, etc."></textarea>
+                                        </div>
+                                        
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary">Agendar Entrega</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!-- Formulário de Retirada -->
+                                <div class="tab-pane fade" id="retirada" role="tabpanel" aria-labelledby="retirada-tab">
+                                    <form id="retiradaForm" novalidate>
+                                        <div class="alert alert-info">
+                                            <i class="fas fa-info-circle me-2"></i> Retirada disponível em nossa loja na Rua das Flores, 123 - Bairro Jardim Primavera.
+                                        </div>
+                                        
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <label for="dataRetirada" class="form-label">Data de Retirada <span class="text-danger">*</span></label>
+                                                <input type="date" class="form-control" id="dataRetirada" name="dataRetirada" required min="">
+                                                <div class="invalid-feedback">
+                                                    Por favor, selecione uma data válida.
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="horarioRetirada" class="form-label">Horário de Retirada <span class="text-danger">*</span></label>
+                                                <select class="form-select" id="horarioRetirada" name="horarioRetirada" required>
+                                                    <option value="" selected disabled>Selecione um horário</option>
+                                                    <option value="9h">9h</option>
+                                                    <option value="10h">10h</option>
+                                                    <option value="11h">11h</option>
+                                                    <option value="12h">12h</option>
+                                                    <option value="13h">13h</option>
+                                                    <option value="14h">14h</option>
+                                                    <option value="15h">15h</option>
+                                                    <option value="16h">16h</option>
+                                                    <option value="17h">17h</option>
+                                                    <option value="18h">18h</option>
+                                                    <option value="19h">19h</option>
+                                                    <option value="20h">20h</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Por favor, selecione um horário.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="nomePessoa" class="form-label">Nome de quem irá retirar <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="nomePessoa" name="nomePessoa" required>
+                                            <div class="invalid-feedback">
+                                                Por favor, informe o nome de quem irá retirar.
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="documentoPessoa" class="form-label">Documento de identificação <span class="text-danger">*</span></label>
+                                            <input type="text" class="form-control" id="documentoPessoa" name="documentoPessoa" required placeholder="CPF ou RG">
+                                            <div class="invalid-feedback">
+                                                Por favor, informe um documento de identificação.
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <label for="observacoesRetirada" class="form-label">Observações</label>
+                                            <textarea class="form-control" id="observacoesRetirada" name="observacoesRetirada" rows="2"></textarea>
+                                        </div>
+                                        
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary">Agendar Retirada</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
-    <footer>
-        <p>&copy; 2025 Minimercado Bom Mercado </p>
-        
-        <nav>
-            <h3>Links Rápidos</h3>
-            <ul>
-                <li><a href="#home">Início</a></li>
-                <li><a href="#alimentos">Alimentos</a></li>
-                <li><a href="#bebidas">Bebidas</a></li>
-                <li><a href="#limpeza">Produtos de Limpeza</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-        
-        <p>Desenvolvido por: Barbara Tavares da SIlva - Parte 1 _ Projeto Fundamentos de Sistemas Web - PUCRS </p>
-        <p>Versão: 1.1</p>
+    <!-- Contato -->
+    <section id="contato" class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-title">Entre em Contato</h2>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <form id="contatoForm" novalidate>
+                            <div class="mb-3">
+                                <label for="contatoNome" class="form-label">Nome <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="contatoNome" name="nome" required>
+                                <div class="invalid-feedback">
+                                    Por favor, informe seu nome.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contatoEmail" class="form-label">E-mail <span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="contatoEmail" name="email" required>
+                                <div class="invalid-feedback">
+                                    Por favor, informe um e-mail válido.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contatoAssunto" class="form-label">Assunto <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="contatoAssunto" name="assunto" required>
+                                <div class="invalid-feedback">
+                                    Por favor, informe o assunto.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contatoMensagem" class="form-label">Mensagem <span class="text-danger">*</span></label>
+                                <textarea class="form-control" id="contatoMensagem" name="mensagem" rows="5" required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, escreva uma mensagem.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="section-title">Informações</h2>
+                <div class="card shadow mb-4">
+                    <div class="card-body">
+                        <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> Endereço</h5>
+                        <p class="ms-4">Rua das Flores, 123 - Bairro Jardim Primavera</p>
+                        
+                        <h5><i class="fas fa-phone me-2 text-primary"></i> Telefones</h5>
+                        <p class="ms-4">
+                            (21) 3000-0000<br>
+                            WhatsApp: (21) 90000-0000
+                        </p>
+                        
+                        <h5><i class="fas fa-envelope me-2 text-primary"></i> E-mail</h5>
+                        <p class="ms-4">contato@minimercadobompreco.test</p>
+                        
+                        <h5><i class="fas fa-clock me-2 text-primary"></i> Horário de Funcionamento</h5>
+                        <p class="ms-4">
+                            Segunda a Sábado: 7h às 21h<br>
+                            Domingos e feriados: 8h às 20h
+                        </p>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white">Minimercado Bom Mercado</h5>
+                    <p>Oferecendo qualidade e praticidade para o seu dia a dia.</p>
+                    <p>
+                        <a href="#" class="me-2"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-whatsapp fa-lg"></i></a>
+                    </p>
+                </div>
+                
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-white">Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#cadastro">Cadastro</a></li>
+                        <li><a href="#agendamento">Agendamento</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4">
+                    <h5 class="text-white">Formas de Pagamento</h5>
+                    <p>Aceitamos dinheiro, cartões de crédito e débito, PIX e transferência bancária.</p>
+                    <div class="d-flex flex-wrap">
+                        <i class="fab fa-cc-visa fa-2x me-2 mb-2"></i>
+                        <i class="fab fa-cc-mastercard fa-2x me-2 mb-2"></i>
+                        <i class="fab fa-cc-amex fa-2x me-2 mb-2"></i>
+                        <i class="fab fa-pix fa-2x me-2 mb-2"></i>
+                        <i class="fas fa-money-bill-wave fa-2x me-2 mb-2"></i>
+                        <i class="fas fa-barcode fa-2x me-2 mb-2"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4" style="border-color: rgba(255, 255, 255, 0.1);">
+            
+            <div class="row">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2025 Minimercado Bom Mercado. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Desenvolvido por: Barbara Tavares da Silva - Projeto Fundamentos de Sistemas Web - PUCRS</p>
+                    <p class="mb-0">Versão: 2.0</p>
+                </div>
+            </div>
+        </div>
     </footer>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Definir data mínima para os campos de data (hoje)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Configurar datas mínimas para agendamentos
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const minDate = `${year}-${month}-${day}`;
+            
+            document.getElementById('dataEntrega').min = minDate;
+            document.getElementById('dataRetirada').min = minDate;
+            
+            // Validação de formulários
+            const forms = document.querySelectorAll('.needs-validation');
+            
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        // Aqui você adicionaria a lógica para enviar os dados para o servidor
+                        showSuccessMessage(form.id);
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+            
+            // Máscaras para campos
+            const cpfInput = document.getElementById('cpf');
+            if (cpfInput) {
+                cpfInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 11) value = value.substring(0, 11);
+                    
+                    if (value.length > 9) {
+                        value = value.replace(/^(\d{3})(\d{3})(\d{3})(\d{2}).*/, '$1.$2.$3-$4');
+                    } else if (value.length > 6) {
+                        value = value.replace(/^(\d{3})(\d{3})(\d{0,3}).*/, '$1.$2.$3');
+                    } else if (value.length > 3) {
+                        value = value.replace(/^(\d{3})(\d{0,3}).*/, '$1.$2');
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            const cepInputs = document.querySelectorAll('input[id$="cep"]');
+            cepInputs.forEach(input => {
+                input.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 8) value = value.substring(0, 8);
+                    
+                    if (value.length > 5) {
+                        value = value.replace(/^(\d{5})(\d{0,3}).*/, '$1-$2');
+                    }
+                    
+                    e.target.value = value;
+                });
+            });
+            
+            const telefoneInput = document.getElementById('telefone');
+            if (telefoneInput) {
+                telefoneInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\D/g, '');
+                    if (value.length > 11) value = value.substring(0, 11);
+                    
+                    if (value.length > 6) {
+                        value = value.replace(/^(\d{2})(\d{5})(\d{0,4}).*/, '($1) $2-$3');
+                    } else if (value.length > 2) {
+                        value = value.replace(/^(\d{2})(\d{0,5}).*/, '($1) $2');
+                    }
+                    
+                    e.target.value = value;
+                });
+            }
+            
+            // Botões de acessibilidade
+            const contrastBtn = document.getElementById('contrastBtn');
+            contrastBtn.addEventListener('click', function() {
+                document.body.classList.toggle('high-contrast');
+                // Reproduzir som ao alterar contraste
+                playSound('contrast');
+            });
+            
+            const fontSizeBtn = document.getElementById('fontSizeBtn');
+            fontSizeBtn.addEventListener('click', function() {
+                document.body.classList.toggle('larger-font');
+                // Reproduzir som ao alterar tamanho da fonte
+                playSound('fontsize');
+            });
+            
+            // Carousel com som
+            const carousel = document.getElementById('mainCarousel');
+            carousel.addEventListener('slide.bs.carousel', function() {
+                playSound('carousel');
+            });
+            
+            // Adicionar ao carrinho com som
+            const addButtons = document.querySelectorAll('.addToCart');
+            addButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productId = this.getAttribute('data-id');
+                    const productName = this.getAttribute('data-name');
+                    const productPrice = this.getAttribute('data-price');
+                    
+                    addToCart(productId, productName, productPrice);
+                    
+                    // Reproduzir som ao adicionar ao carrinho
+                    playSound('addcart');
+                    
+                    // Mostrar feedback visual
+                    showToast(`${productName} adicionado ao carrinho!`);
+                });
+            });
+            
+            // Inicializar todos os formulários para validação
+            document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (this.checkValidity()) {
+                    showSuccessMessage('cadastro');
+                }
+                this.classList.add('was-validated');
+            });
+            
+            document.getElementById('entregaForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (this.checkValidity()) {
+                    showSuccessMessage('entrega');
+                }
+                this.classList.add('was-validated');
+            });
+            
+            document.getElementById('retiradaForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (this.checkValidity()) {
+                    showSuccessMessage('retirada');
+                }
+                this.classList.add('was-validated');
+            });
+            
+            document.getElementById('contatoForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                if (this.checkValidity()) {
+                    showSuccessMessage('contato');
+                }
+                this.classList.add('was-validated');
+            });
+        });
+        
+        // Funções auxiliares
+        function showSuccessMessage(formType) {
+            let message = '';
+            
+            switch(formType) {
+                case 'cadastro':
+                    message = 'Cadastro realizado com sucesso! Bem-vindo ao Minimercado Bom Mercado.';
+                    document.getElementById('cadastroForm').reset();
+                    document.getElementById('cadastroForm').classList.remove('was-validated');
+                    break;
+                case 'entrega':
+                    message = 'Agendamento de entrega realizado com sucesso! Aguardamos sua data selecionada.';
+                    document.getElementById('entregaForm').reset();
+                    document.getElementById('entregaForm').classList.remove('was-validated');
+                    break;
+                case 'retirada':
+                    message = 'Agendamento de retirada realizado com sucesso! Aguardamos você na data selecionada.';
+                    document.getElementById('retiradaForm').reset();
+                    document.getElementById('retiradaForm').classList.remove('was-validated');
+                    break;
+                case 'contato':
+                    message = 'Mensagem enviada com sucesso! Responderemos em breve.';
+                    document.getElementById('contatoForm').reset();
+                    document.getElementById('contatoForm').classList.remove('was-validated');
+                    break;
+            }
+            
+            showToast(message);
+            playSound('success');
+        }
+        
+        function showToast(message) {
+            let toastContainer = document.querySelector('.toast-container');
+            
+            if (!toastContainer) {
+                toastContainer = document.createElement('div');
+                toastContainer.className = 'toast-container position-fixed bottom-0 end-0 p-3';
+                document.body.appendChild(toastContainer);
+            }
+            
+            const toastEl = document.createElement('div');
+            toastEl.className = 'toast align-items-center text-white bg-success border-0';
+            toastEl.setAttribute('role', 'alert');
+            toastEl.setAttribute('aria-live', 'assertive');
+            toastEl.setAttribute('aria-atomic', 'true');
+            
+            const toastBody = document.createElement('div');
+            toastBody.className = 'toast-body d-flex align-items-center';
+            
+            const icon = document.createElement('i');
+            icon.className = 'fas fa-check-circle me-2';
+            
+            toastBody.appendChild(icon);
+            toastBody.appendChild(document.createTextNode(message));
+            
+            const closeButton = document.createElement('button');
+            closeButton.type = 'button';
+            closeButton.className = 'btn-close btn-close-white ms-auto me-2';
+            closeButton.setAttribute('data-bs-dismiss', 'toast');
+            closeButton.setAttribute('aria-label', 'Fechar');
+            
+            toastBody.appendChild(closeButton);
+            toastEl.appendChild(toastBody);
+            toastContainer.appendChild(toastEl);
+            
+            // Inicializar
+            const toast = new bootstrap.Toast(toastEl, {
+                animation: true,
+                autohide: true,
+                delay: 5000
+            });
+            
+            toast.show();
+            
+            toastEl.addEventListener('hidden.bs.toast', () => {
+                toastContainer.removeChild(toastEl);
+            });
+        }
+        
+        function addToCart(id, name, price) {
+            // Simulação de adicionar ao carrinho
+            console.log(`Produto adicionado: ID=${id}, Nome=${name}, Preço=${price}`);
+            
+        
+        }
+        
+        // Funcionalidade de sons
+        const sounds = {
+            success: 'https://actions.google.com/sounds/v1/alarms/coin_drop.ogg',
+            addcart: 'https://actions.google.com/sounds/v1/cartoon/pop.ogg',
+            carousel: 'https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg',
+            contrast: 'https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg',
+            fontsize: 'https://actions.google.com/sounds/v1/cartoon/weird_spring_boing.ogg'
+        };
+        
+        function playSound(type) {
+            if (!sounds[type]) return;
+            
+            const audio = new Audio(sounds[type]);
+            audio.volume = 0.3; // Reduzir volume para não ser muito intrusivo
+            audio.play().catch(err => console.log('Erro ao reproduzir som:', err));
+        }
+        
+        // Desativar som para usuários que preferem redução de movimento
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            // Sobrescrever função de som para não reproduzir nada
+            window.playSound = function() {};
+        }
+    </script>
 </body>
 </html>
